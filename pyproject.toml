@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapi-admin"
+version = "0.1.0"
+description = "A command-line tool to create a FastAPI app with a predefined directory structure and files."
+authors = [
+    { name = "Bimal Patel", email = "bimal@steinnlabs.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.6"
+keywords = ["FastAPI", "CLI", "app-generator"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+packages = ["fastapi_admin"]
+
+[tool.setuptools.package-data]
+"fastapi_admin" = ["fastapi_admin.sh"]
+
+[project.urls]
+Homepage = "https://github.com/BimalSteinn/fastapi-admin"
+Issues = "https://github.com/BimalSteinn/fastapi-admin/issues"
