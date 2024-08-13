@@ -1,0 +1,3 @@
+venv/
+dist/
+fastapi_app.egg-info/

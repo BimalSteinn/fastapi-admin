@@ -3,8 +3,8 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "fastapi-admin"
-version = "0.1.0"
+name = "fastapi_app"
+version = "0.1.5"
 description = "A command-line tool to create a FastAPI app with a predefined directory structure and files."
 authors = [
     { name = "Bimal Patel", email = "bimal@steinnlabs.com" }
@@ -20,11 +20,11 @@ classifiers = [
 ]
 
 [tool.setuptools]
-packages = ["fastapi_admin"]
+packages = ["fastapi_app"]
 
-[tool.setuptools.package-data]
-"fastapi_admin" = ["fastapi_admin.sh"]
+[project.scripts]
+fastapi_app = "fastapi_app:main"
 
 [project.urls]
-Homepage = "https://github.com/BimalSteinn/fastapi-admin"
-Issues = "https://github.com/BimalSteinn/fastapi-admin/issues"
+Homepage = "https://github.com/BimalSteinn/fastapi_app"
+Issues = "https://github.com/BimalSteinn/fastapi_app/issues"
