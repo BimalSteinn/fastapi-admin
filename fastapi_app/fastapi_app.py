@@ -1,7 +1,9 @@
 import os
 
 
-def create_app_structure(app_name):
+def create_app_structure(args):
+
+    app_name = args[0]
     # Define directories and files
     dirs = [app_name]
 

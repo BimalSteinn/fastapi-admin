@@ -12,9 +12,20 @@ pip install fastapi_app
 
 ## Usage
 
-Use the command to create a new FastAPI app:
+### User the command
 ```bash
-fastapi_app <app_name>
+fastapi_app create_project <project_name>
+```
+To create empty project
+
+
+### Go to that project
+```bash
+cd <project_name>
 ```
 
-This will generate a directory with the specified files and structure.
+### Use the command to create a new FastAPI app:
+```bash
+fastapi_app create_app <app_name>
+```
+This will generate a FastAPI app.
