@@ -1,5 +1,7 @@
 import os
 
+from fastapi_app.logger import logger
+
 
 def create_app_structure(args):
 
@@ -24,10 +26,10 @@ def create_app_structure(args):
     # Create directories
     for dir in dirs:
         os.makedirs(dir, exist_ok=True)
-        print(f"Created directory: {dir}")
+        logger.info(f"Created directory: {dir}")
 
     # Create files with content
     for file, content in zip(files, contents):
         with open(file, "w") as f:
             f.write(content)
-        print(f"Created file: {file}")
+        logger.info(f"Created file: {file}")

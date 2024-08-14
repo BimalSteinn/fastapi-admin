@@ -1,12 +1,7 @@
+from fastapi_app.logger import logger
+
+
 def fastapi_app_help(args):
 
-    print(
-        """
-        Usage: fastapi_app <command>
-
-        Commands:
-        create_project <project_name> - Create a FastAPI project structure
-
-        create_app <app_name> - Create a FastAPI app structure
-        """
-    )
+    help_text = open("fastapi_app/static/help.txt", "r").read()
+    logger.info(help_text)

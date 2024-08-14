@@ -1,0 +1,12 @@
+Usage: fastapi_app <command>
+
+Commands:
+create_project <project_name> - Create a FastAPI project structure
+    Optional Arguments:
+        --force - Overwrite the project directory if it already exists
+        .gitignore - Create a .gitignore file
+        Dockerfile - Create a Dockerfile
+        config.py - Create a config file
+
+
+create_app <app_name> - Create a FastAPI app structure

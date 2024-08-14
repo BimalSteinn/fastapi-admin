@@ -2,3 +2,4 @@ venv/
 dist/
 fastapi_app.egg-info/
 __pycache__/
+.vscode/

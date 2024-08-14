@@ -4,10 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fastapi_app"
-version = "0.1.7"
+version = "0.1.8"
 description = "A command-line tool to create a FastAPI project and app with a predefined directory structure and files."
 authors = [
-    { name = "Bimal Patel", email = "bimal@steinnlabs.com" }
+    { name = "Bimal Patel", email = "bimal@steinnlabs.com" },
+    { name = "Jeet Patel", email = "jeet@steinnlabs.com" }
 ]
 license = { text = "MIT" }
 readme = "README.md"
