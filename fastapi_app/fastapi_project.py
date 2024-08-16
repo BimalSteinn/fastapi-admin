@@ -1,3 +1,4 @@
+from typing import List
 import os
 import sys
 from fastapi_app.logger import logger
@@ -19,6 +20,21 @@ def create_project_dir(project_name, args) -> None:
     logger.info(f"Created directory: {project_dir}")
 
 
+def prompt_for_optional_files(optional_files: List[str]) -> List[str]:  # type: ignore
+    selected_files = []
+
+    logger.info(f"Leave Blank to skip the file creation")
+    for file in optional_files:  # type: ignore
+        choice: str = input(f"Do you want to create {file}? (yes/no): ").strip().lower()
+        if not choice:
+            continue
+        while choice not in ["yes", "no"]:
+            choice = input(f"Invalid choice, please enter yes or no: ").strip().lower()
+        if choice == "yes":
+            selected_files.append(file)
+    return selected_files  # type: ignore
+
+
 def create_project_structure(args) -> None:
 
     project_name = args[0]
@@ -26,6 +42,8 @@ def create_project_structure(args) -> None:
     optional_files = [".gitignore", "Dockerfile", "config.py"]
 
     create_project_dir(project_name=project_name, args=args)
+
+    selected_files: List = prompt_for_optional_files(optional_files)
 
     # Create project files with content
     content = {
@@ -38,11 +56,10 @@ def create_project_structure(args) -> None:
         os.path.join(project_name, "requirements.txt"): "fastapi\nuvicorn\npydantic",
     }
 
-    for file in optional_files:
-        if file in args:
-            content[os.path.join(project_name, file)] = open(
-                f"fastapi_app/static/{file}"
-            ).read()
+    for file in selected_files:
+        content[os.path.join(project_name, file)] = open(
+            f"fastapi_app/static/{file}"
+        ).read()
 
     for file, text in content.items():
         with open(file, "w") as f:
