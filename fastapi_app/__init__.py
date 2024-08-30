@@ -6,7 +6,7 @@ from fastapi_app.help import fastapi_app_help
 from fastapi_app.logger import logger
 
 FUNCTION_MAP = {
-    "create_app": {"name": create_app_structure, "min_args": 1, "max_args": 1},
+    "create_app": {"name": create_app_structure, "min_args": 1, "max_args": 2},
     "create_project": {"name": create_project_structure, "min_args": 1, "max_args": 5},
     "--help": {"name": fastapi_app_help, "min_args": 0, "max_args": 0},
 }

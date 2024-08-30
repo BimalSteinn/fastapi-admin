@@ -18,11 +18,8 @@ pip install fastapi_app
 fastapi_app create_project <project_name>
 ```
 
-There are some optional arguments like
-1. --force - Overwrite the project directory if it already exists
-2. .gitignore - Create a .gitignore file
-3. Dockerfile - Create a Dockerfile
-4. config.py - Create a config file
+There is one optional argument
+- --force - Overwrite the project directory if it already exists
 
 ### Go to that project
 ```bash
